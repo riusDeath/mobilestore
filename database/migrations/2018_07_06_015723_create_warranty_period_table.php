@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateWarrantyPeriodTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,15 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('warranty_periods', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',20);
-            $table->integer('phone');
-            $table->string('adress');
-            $table->string('grade')->default('customer');
+            $table->integer('time')->nullable();
+            $table->string('type')->default('months');
             $table->tinyInteger('status')->default(1);
-            $table->string('email')->unique();
-            $table->string('password',60);
-            $table->rememberToken();
-            $table->timestamp('created_at')->nullable()->useCurrent();
+           $table->timestamp('created_at')->nullable()->useCurrent();
             $table->timestamp('updated_at')->nullable()->useCurrent();
+ 
         });
-     
     }
 
     /**
@@ -36,6 +31,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('warranty_periods');
     }
 }
