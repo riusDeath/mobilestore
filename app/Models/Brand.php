@@ -8,12 +8,13 @@ class Brand extends Model
 {
     protected $tabel = 'brands';
 
-    protected $fillable=[
-    	'name', 'adress','description','status',
+    protected $fillable = [
+    	'name', 'adress', 'description', 'status',
     ];
 
     public function product()
     {
-    	return $this->hasMany('App\Models\Product','brand_id','id');
+    	return $this->hasMany('App\Models\Product', 'brand_id','id');
     }
+
 }

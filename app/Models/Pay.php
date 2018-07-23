@@ -8,12 +8,12 @@ class Pay extends Model
 {
     protected $tabel = 'pays';
 
-    protected $fillable=[
+    protected $fillable = [
     	'name', 'description',
     ];
 
     public function order()
     {
-    	return $this->hasMany('App\Models\Order','pay_id','id');
+    	return $this->hasMany('App\Models\Order', 'pay_id', 'id');
     }
 }

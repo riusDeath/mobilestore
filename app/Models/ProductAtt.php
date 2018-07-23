@@ -8,7 +8,7 @@ class ProductAtt extends Model
 {
     protected $tabel = 'product_atts';
 
-    protected $fillable=[
+    protected $fillable = [
     	'attribute_id',  'product_id', 
     ];
 }

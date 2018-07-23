@@ -8,15 +8,13 @@ class Attribute extends Model
 {
     protected $tabel = 'attributes';
 
-    protected $fillable=[
-    	'name', 'value','types',
+    protected $fillable = [
+    	'name', 'value', 'types',
     ];
 
     public function product()
     {
         return $this->belongsToMany('App\Models\Product');
-    }
-
-    
+    }    
     
 }

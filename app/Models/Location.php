@@ -8,12 +8,12 @@ class Location extends Model
 {
      protected $tabel = 'locations';
 
-    protected $fillable=[
+    protected $fillable = [
     	'county', 'adress', 'pro_id',
     ];
 
     public function province()
     {
-    	return $this->belongsTo('App\Models\Province','pro_id','id');
+    	return $this->belongsTo('App\Models\Province', 'pro_id', 'id');
     }
 }

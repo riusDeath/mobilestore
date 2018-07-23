@@ -17,7 +17,7 @@ class User extends Authenticatable
 
     protected $table = 'users';
     protected $fillable = [
-        'name', 'email', 'adress',  'phone','grade','status', 'password',
+        'name', 'email', 'adress',  'phone', 'grade', 'status', 'password',
     ];
 
     /**
@@ -34,28 +34,28 @@ class User extends Authenticatable
         if(empty(request()->search)){
             return $query;
         }else{
-            return $query->where('name','like','%'.request()->search.'%');
+            return $query->where('name', 'like', '%'.request()->search.'%');
         }
     }
 
     public function comment()
     {
-        return $this->hasMany('App\Models\Comment','user_id','id');
+        return $this->hasMany('App\Models\Comment', 'user_id', 'id');
     }
 
     public function rate()
     {
-        return $this->hasMany('App\Models\Rate','user_id','id');
+        return $this->hasMany('App\Models\Rate', 'user_id', 'id');
     }
 
     public function log()
     {
-        return $this->hasMany('App\Models\Log','user_id','id');
+        return $this->hasMany('App\Models\Log', 'user_id', 'id');
     }
 
     public function order()
     {
-        return $this->hasMany('App\Models\Order','user_id','id');
+        return $this->hasMany('App\Models\Order', 'user_id', 'id');
     }
     
 }
